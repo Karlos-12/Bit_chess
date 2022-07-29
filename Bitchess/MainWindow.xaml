@@ -17,8 +17,8 @@
         <Border x:Name="bord" BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Padding="5,5,5,5" HorizontalAlignment="Center" Width="1040" Height="1040" VerticalAlignment="Center">
             <Canvas x:Name="field" Margin="0,0,0,0"/>
         </Border>
-        <Border BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Grid.Column="1" Margin="20,0,20,30" Height="824" VerticalAlignment="Bottom">
-            <TextBlock x:Name="log" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBlock"/>
+        <Border BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Grid.Column="1" Margin="0,201,59,52">
+            <TextBlock x:Name="log" Margin="-5,0,0,0" TextWrapping="Wrap" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Foreground="#FF023E00"/>
         </Border>
 
     </Grid>

@@ -23,14 +23,14 @@ namespace Bitchess
             {
                 Figure non1 = new Figure(FigureType.pawn, Side.black, 1, i, "Black_pawn_" + i, main);
                 Figurelist.Add(non1);
-                board[0, i] = non1;
+                board[1, i] = non1;
             }
 
             for (int i = 7; i >= 0; i--)
             {
                 Figure non2 = new Figure(FigureType.pawn, Side.white, 6, i, "White_pawn_" + i, main);
                 Figurelist.Add(non2);
-                board[7, i] = non2;
+                board[6, i] = non2;
             }
 
             paint();

@@ -164,6 +164,26 @@ namespace Bitchess
                                 }
                             }
                             catch { }
+                            try
+                            {
+                                if (((Controler)main.contr).board[y - 1, x - 1].side == Side.black)
+                                {
+                                    Border highlith = new Border()
+                                    {
+                                        BorderThickness = new System.Windows.Thickness(5),
+                                        BorderBrush = new SolidColorBrush(Colors.Red),
+                                        Height = 1000 / 8,
+                                        Width = 1000 / 8,
+                                        Tag = new int[] { y - 1, x - 1 }
+                                    };
+                                    highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                    main.field.Children.Add(highlith);
+                                    Canvas.SetTop(highlith, (y - 1) * (1000 / 8) + 10);
+                                    Canvas.SetLeft(highlith, (x - 1) * (1000 / 8) + 10);
+                                }
+                            }
+                            catch { }
                             break;
                         case Side.black:
 
@@ -180,7 +200,11 @@ namespace Bitchess
 
         public void move(object sneder, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            Border nol = (Border)sneder;
+            main.log.Text += y + "_" + x + " ---> " + ((int[])nol.Tag)[0] + "_" + ((int[])nol.Tag)[1] + "\n";
+            y = ((int[])nol.Tag)[0];
+            x = ((int[])nol.Tag)[1];
+            ((Controler)main.contr).paint();
         }
 
         public void take(object sneder, System.Windows.Input.MouseButtonEventArgs e)
