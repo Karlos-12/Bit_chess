@@ -118,8 +118,10 @@ namespace Bitchess
                                     BorderThickness = new System.Windows.Thickness(5),
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
-                                    Width = 1000 / 8
+                                    Width = 1000 / 8,
+                                    Tag = new int[] {y-2, x}
                                 };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
                                 main.field.Children.Add(highlith);
                                 Canvas.SetTop(highlith, (y - 2) * (1000 / 8) + 10);
@@ -132,14 +134,36 @@ namespace Bitchess
                                     BorderThickness = new System.Windows.Thickness(5),
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
-                                    Width = 1000 / 8
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { y - 1, x }
                                 };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
                                 main.field.Children.Add(highlith);
                                 Canvas.SetTop(highlith, (y - 1) * (1000 / 8) + 10);
                                 Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                                
                             }
+                            try
+                            {
+                                if (((Controler)main.contr).board[y - 1, x + 1].side == Side.black)
+                                {
+                                    Border highlith = new Border()
+                                    {
+                                        BorderThickness = new System.Windows.Thickness(5),
+                                        BorderBrush = new SolidColorBrush(Colors.Red),
+                                        Height = 1000 / 8,
+                                        Width = 1000 / 8,
+                                        Tag = new int[] { y - 1, x + 1 }
+                                    };
+                                    highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
+                                    main.field.Children.Add(highlith);
+                                    Canvas.SetTop(highlith, (y - 1) * (1000 / 8) + 10);
+                                    Canvas.SetLeft(highlith, (x + 1) * (1000 / 8) + 10);
+                                }
+                            }
+                            catch { }
                             break;
                         case Side.black:
 
@@ -152,6 +176,16 @@ namespace Bitchess
 
                     break;
             }
+        }
+
+        public void move(object sneder, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
+
+        public void take(object sneder, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
         }
     }
 
