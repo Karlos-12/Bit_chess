@@ -37,5 +37,12 @@ namespace Bitchess
         {
             maincotr.paint();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow news = new MainWindow();
+            news.Show();
+            Close();
+        }
     }
 }

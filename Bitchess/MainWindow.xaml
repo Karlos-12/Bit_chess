@@ -20,6 +20,7 @@
         <Border BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Grid.Column="1" Margin="0,201,59,52">
             <TextBlock x:Name="log" Margin="-5,0,0,0" TextWrapping="Wrap" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Foreground="#FF023E00"/>
         </Border>
+        <Button Grid.Column="1" Content="New game" Height="151" Margin="10,10,59,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click"/>
 
     </Grid>
 </Window>
