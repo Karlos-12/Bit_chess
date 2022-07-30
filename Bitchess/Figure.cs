@@ -28,11 +28,15 @@ namespace Bitchess
             this.main = main;
 
             image.MouseDown += new System.Windows.Input.MouseButtonEventHandler(piece_click);
+            swithcero();
+        }
 
+        public void swithcero()
+        {
             switch (side)
             {
                 case Side.black:
-                    switch (type)
+                    switch (Type)
                     {
                         case FigureType.pawn:
                             image.Source = new BitmapImage(new Uri("Images/blackbishop.png", UriKind.Relative));
@@ -55,7 +59,7 @@ namespace Bitchess
                     }
                     break;
                 case Side.white:
-                    switch (type)
+                    switch (Type)
                     {
                         case FigureType.pawn:
                             image.Source = new BitmapImage(new Uri("Images/whitepawn.png", UriKind.Relative));
@@ -210,11 +214,22 @@ namespace Bitchess
                 ((Controler)main.contr).board[y, x] = null;
                 ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]] = this;
 
-                main.log.Text += y + "_" + x + " ---> " + ((int[])nol.Tag)[0] + "_" + ((int[])nol.Tag)[1] + "\n";
+                main.log.Text += y + "_" + x + " ---> " + ((int[])nol.Tag)[0] + "_" + ((int[])nol.Tag)[1];
                 y = ((int[])nol.Tag)[0];
                 x = ((int[])nol.Tag)[1];
                 ((Controler)main.contr).paint();
-            }
+
+                if (Type == FigureType.pawn && (y == 0 || y == 7))
+                {
+                    Pawnchooser chooser = new Pawnchooser(this);
+                    chooser.Show();
+                    main.log.Text += " type_switch\n";
+                }
+                else
+                {
+                    main.log.Text += "\n";
+                }
+            }              
         }
 
         public void take(object sneder, System.Windows.Input.MouseButtonEventArgs e)
