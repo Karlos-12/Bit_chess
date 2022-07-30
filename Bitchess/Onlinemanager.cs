@@ -41,24 +41,27 @@ namespace Bitchess
         public void Tick_tack(object sender, EventArgs e)
         {
             int cntp = client.Get("count").ResultAs<int>();
-            if(cntp != countec)
+            if (cntp > countec)
             {
-                countec++;
-                movetake move = client.Get("moves/" + countec.ToString()).ResultAs<movetake>();
+                if (cntp != countec)
+                {
+                    countec++;
+                    movetake move = client.Get("moves/" + countec.ToString()).ResultAs<movetake>();
 
-                if(move.move == true)
-                {
-                    Figure f = ((Controler)main.contr).Figurelist[move.indx];
-                    Border b = new Border();
-                    b.Tag = new int[] {move.ny, move.nx};
-                    f.move(b, null);
-                }
-                else if(move.move == false)
-                {
-                    Figure f = ((Controler)main.contr).Figurelist[move.indx];
-                    Border b = new Border();
-                    b.Tag = new int[] { move.ny, move.nx };
-                    f.take(b, null);
+                    if (move.move == true)
+                    {
+                        Figure f = ((Controler)main.contr).Figurelist[move.indx];
+                        Border b = new Border();
+                        b.Tag = new int[] { move.ny, move.nx };
+                        f.move(b, null);
+                    }
+                    else if (move.move == false)
+                    {
+                        Figure f = ((Controler)main.contr).Figurelist[move.indx];
+                        Border b = new Border();
+                        b.Tag = new int[] { move.ny, move.nx };
+                        f.take(b, null);
+                    }
                 }
             }
 
