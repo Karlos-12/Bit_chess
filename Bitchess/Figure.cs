@@ -1716,9 +1716,9 @@ namespace Bitchess
             Figure nols = ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]];
             ((Controler)main.contr).Figurelist.RemoveAt(((Controler)main.contr).Figurelist.IndexOf(nols));
 
-            if((((Controler)main.contr).board[y, x]).Type == FigureType.king)
+            if((((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]]).Type == FigureType.king)
             {
-                (Controler)main.contr).ende();
+                ((Controler)main.contr).ende();
             }
 
             ((Controler)main.contr).board[y, x] = null;

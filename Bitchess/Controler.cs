@@ -183,7 +183,12 @@ namespace Bitchess
 
         public void ende()
         {
-
+            foreach (var item in Figurelist)
+            {
+                item.image.IsEnabled = false;
+            }
+            main.log.Text += " \n __Game has ended__";
+            main.indc.Content = "Game has ended";
         }
     }
 }
