@@ -39,7 +39,7 @@ namespace Bitchess
                     switch (Type)
                     {
                         case FigureType.pawn:
-                            image.Source = new BitmapImage(new Uri("Images/blackbishop.png", UriKind.Relative));
+                            image.Source = new BitmapImage(new Uri("Images/blackpawn.png", UriKind.Relative));
                             break;
                         case FigureType.knight:
                             image.Source = new BitmapImage(new Uri("Images/blackhorse.png", UriKind.Relative));
@@ -447,6 +447,905 @@ namespace Bitchess
                         }
                     }
                     break;
+                case FigureType.bishop:
+                    //++
+                    int _1 = y +1;
+                    for (int d = x + 1; d < (8); d++)
+                    {
+                        if (_1 < 8 && _1 > -1)
+                        {
+                            
+                            if (((Controler)main.contr).board[_1, d] == null)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Green),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _1, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_1) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                            }
+                            else if (((Controler)main.contr).board[_1, d].side != side)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Red),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _1, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_1) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                                d = 7;
+                            }
+                            else if (((Controler)main.contr).board[_1, d].side == side)
+                            {
+                                d = 7;
+                            }
+                            _1++;
+                        }
+                        else d= 7;
+                    }
+
+                    //-+
+                    int _4 = y -1;
+                    for (int d = x + 1; d < 8; d++)
+                    {
+                        if (_4 > -1)
+                        {
+
+                            if (((Controler)main.contr).board[_4, d] == null)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Green),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _4, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_4) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                            }
+                            else if (((Controler)main.contr).board[_4, d].side != side)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Red),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _4, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_4) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                                d = 8;
+                            }
+                            else if (((Controler)main.contr).board[_4, d].side == side)
+                            {
+                                d = 8;
+                            }
+                        }
+                        else d = 8;
+                        _4--;
+                    }
+
+                    //+-
+                    int _3 = y +1;
+                    for (int d = x - 1; d > -1; d--)
+                    {
+                        if (_3 < 8)
+                        {
+                            
+                            if (((Controler)main.contr).board[_3, d] == null)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Green),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _3, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_3) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                            }
+                            else if (((Controler)main.contr).board[_3, d].side != side)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Red),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _3, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_3) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                                d = -2;
+                            }
+                            else if (((Controler)main.contr).board[_3, d].side == side)
+                            {
+                                d = -2;
+                            }
+                        }
+                        else d = -2;
+                        _3++;
+                    }
+
+                    //--
+                    int _2 = y -1;
+                    for (int d = x - 1; d > -1; d--)
+                    {
+                        if (_2 > -1)
+                        {
+
+                            if (((Controler)main.contr).board[_2, d] == null)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Green),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _2, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_2) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                            }
+                            else if (((Controler)main.contr).board[_2, d].side != side)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Red),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _2, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_2) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                                d = -2;
+                            }
+                            else if (((Controler)main.contr).board[_2, d].side == side)
+                            {
+                                d = -2;
+                            }
+                        }
+                        else d = -2;
+                        _2--;
+                    }
+                    break;
+                case FigureType.queen:
+                    //x+
+                    for (int d = x + 1; d < (8); d++)
+                    {
+                        if (((Controler)main.contr).board[y, d] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { y, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (y) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                        }
+                        else if (((Controler)main.contr).board[y, d].side != side)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { y, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (y) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                            d = 7;
+                        }
+                        else if (((Controler)main.contr).board[y, d].side == side)
+                        {
+                            d = 7;
+                        }
+                    }
+
+                    //x-
+                    for (int d = x - 1; d > -1; d--)
+                    {
+                        if (((Controler)main.contr).board[y, d] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { y, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (y) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                        }
+                        else if (((Controler)main.contr).board[y, d].side != side)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { y, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (y) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                            d = -2;
+                        }
+                        else if (((Controler)main.contr).board[y, d].side == side)
+                        {
+                            d = -2;
+                        }
+                    }
+
+                    //y+
+                    for (int d = y + 1; d < 8; d++)
+                    {
+                        if (((Controler)main.contr).board[d, x] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { d, x }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (d) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                        }
+                        else if (((Controler)main.contr).board[d, x].side != side)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { d, x }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (d) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+
+                            d = 7;
+                        }
+                        else if (((Controler)main.contr).board[d, x].side == side)
+                        {
+                            d = 7;
+                        }
+                    }
+
+                    //y-
+                    for (int d = y - 1; d > -1; d--)
+                    {
+                        if (((Controler)main.contr).board[d, x] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { d, x }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (d) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                        }
+                        else if (((Controler)main.contr).board[d, x].side != side)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { d, x }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (d) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+
+                            d = -2;
+                        }
+                        else if (((Controler)main.contr).board[d, x].side == side)
+                        {
+                            d = -2;
+                        }
+                    }
+
+                    //++
+                    int _a = y + 1;
+                    for (int d = x + 1; d < (8); d++)
+                    {
+                        if (_a < 8 && _a > -1)
+                        {
+
+                            if (((Controler)main.contr).board[_a, d] == null)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Green),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _a, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_a) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                            }
+                            else if (((Controler)main.contr).board[_a, d].side != side)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Red),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _a, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_a) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                                d = 7;
+                            }
+                            else if (((Controler)main.contr).board[_a, d].side == side)
+                            {
+                                d = 7;
+                            }
+                            _a++;
+                        }
+                        else d = 7;
+                    }
+
+                    //-+
+                    int _b = y - 1;
+                    for (int d = x + 1; d < 8; d++)
+                    {
+                        if (_b > -1)
+                        {
+
+                            if (((Controler)main.contr).board[_b, d] == null)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Green),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _b, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_b) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                            }
+                            else if (((Controler)main.contr).board[_b, d].side != side)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Red),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _b, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_b) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                                d = 8;
+                            }
+                            else if (((Controler)main.contr).board[_b, d].side == side)
+                            {
+                                d = 8;
+                            }
+                        }
+                        else d = 8;
+                        _b--;
+                    }
+
+                    //+-
+                    int _c = y + 1;
+                    for (int d = x - 1; d > -1; d--)
+                    {
+                        if (_c < 8)
+                        {
+
+                            if (((Controler)main.contr).board[_c, d] == null)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Green),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _c, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_c) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                            }
+                            else if (((Controler)main.contr).board[_c, d].side != side)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Red),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _c, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_c) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                                d = -2;
+                            }
+                            else if (((Controler)main.contr).board[_c, d].side == side)
+                            {
+                                d = -2;
+                            }
+                        }
+                        else d = -2;
+                        _c++;
+                    }
+
+                    //--
+                    int _d = y - 1;
+                    for (int d = x - 1; d > -1; d--)
+                    {
+                        if (_d > -1)
+                        {
+
+                            if (((Controler)main.contr).board[_d, d] == null)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Green),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _d, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_d) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                            }
+                            else if (((Controler)main.contr).board[_d, d].side != side)
+                            {
+                                Border highlith = new Border()
+                                {
+                                    BorderThickness = new System.Windows.Thickness(5),
+                                    BorderBrush = new SolidColorBrush(Colors.Red),
+                                    Height = 1000 / 8,
+                                    Width = 1000 / 8,
+                                    Tag = new int[] { _d, d }
+                                };
+                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                                main.field.Children.Add(highlith);
+                                Canvas.SetTop(highlith, (_d) * (1000 / 8) + 10);
+                                Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+
+                                d = -2;
+                            }
+                            else if (((Controler)main.contr).board[_d, d].side == side)
+                            {
+                                d = -2;
+                            }
+                        }
+                        else d = -2;
+                        _d--;
+                    }
+                    break;
+                case FigureType.king:
+                    //y-
+                    try
+                    {
+                        int d = y - 1;
+                        if (((Controler)main.contr).board[d, x] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { d, x }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (d) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                        }
+
+                        if (((Controler)main.contr).board[d, x ].side != side)
+                        {
+                            Border highlithh = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { d, x }
+                            };
+                            highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlithh);
+                            Canvas.SetTop(highlithh, (d) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlithh, (x) * (1000 / 8) + 10);
+                        }                                    
+                    }
+                    catch { }
+
+                    //y+
+                    try
+                    {
+                        int d = y + 1;
+                        if (((Controler)main.contr).board[d, x] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { d, x }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (d) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                        }
+
+                        if (((Controler)main.contr).board[d, x].side != side)
+                        {
+                            Border highlithh = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { d, x }
+                            };
+                            highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlithh);
+                            Canvas.SetTop(highlithh, (d) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlithh, (x) * (1000 / 8) + 10);
+                        }
+                    }
+                    catch { }
+
+                    //x-
+                    try
+                    {
+                        int d = x -1;
+                        if (((Controler)main.contr).board[y, d] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { y, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (y) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                        }
+
+                        if (((Controler)main.contr).board[y, d].side != side)
+                        {
+                            Border highlithh = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { y, d }
+                            };
+                            highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlithh);
+                            Canvas.SetTop(highlithh, (y) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlithh, (d) * (1000 / 8) + 10);
+                        }
+                    }
+                    catch { }
+
+                    //x+
+                    try
+                    {
+                        int d = x + 1;
+                        if (((Controler)main.contr).board[y, d] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { y, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (y) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                        }
+
+                        if (((Controler)main.contr).board[y, d].side != side)
+                        {
+                            Border highlithh = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { y, d }
+                            };
+                            highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlithh);
+                            Canvas.SetTop(highlithh, (y) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlithh, (d) * (1000 / 8) + 10);
+                        }
+                    }
+                    catch { }
+
+                    //x+ y+
+                    try
+                    {
+                        int d = x + 1;
+                        int s = y + 1;
+                        if (((Controler)main.contr).board[s, d] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { s, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (s) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                        }
+
+                        if (((Controler)main.contr).board[s, d].side != side)
+                        {
+                            Border highlithh = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { s, d }
+                            };
+                            highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlithh);
+                            Canvas.SetTop(highlithh, (s) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlithh, (d) * (1000 / 8) + 10);
+                        }
+                    }
+                    catch { }
+
+                    //x- y-
+                    try
+                    {
+                        int d = x - 1;
+                        int s = y - 1;
+                        if (((Controler)main.contr).board[s, d] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { s, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (s) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                        }
+
+                        if (((Controler)main.contr).board[s, d].side != side)
+                        {
+                            Border highlithh = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { s, d }
+                            };
+                            highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlithh);
+                            Canvas.SetTop(highlithh, (s) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlithh, (d) * (1000 / 8) + 10);
+                        }
+                    }
+                    catch { }
+
+                    //x+ y-
+                    try
+                    {
+                        int d = x + 1;
+                        int s = y - 1;
+                        if (((Controler)main.contr).board[s, d] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { s, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (s) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                        }
+
+                        if (((Controler)main.contr).board[s, d].side != side)
+                        {
+                            Border highlithh = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { s, d }
+                            };
+                            highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlithh);
+                            Canvas.SetTop(highlithh, (s) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlithh, (d) * (1000 / 8) + 10);
+                        }
+                    }
+                    catch { }
+
+                    //x- y+
+                    try
+                    {
+                        int d = x - 1;
+                        int s = y + 1;
+                        if (((Controler)main.contr).board[s, d] == null)
+                        {
+                            Border highlith = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Green),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { s, d }
+                            };
+                            highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+
+                            main.field.Children.Add(highlith);
+                            Canvas.SetTop(highlith, (s) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlith, (d) * (1000 / 8) + 10);
+                        }
+
+                        if (((Controler)main.contr).board[s, d].side != side)
+                        {
+                            Border highlithh = new Border()
+                            {
+                                BorderThickness = new System.Windows.Thickness(5),
+                                BorderBrush = new SolidColorBrush(Colors.Red),
+                                Height = 1000 / 8,
+                                Width = 1000 / 8,
+                                Tag = new int[] { s, d }
+                            };
+                            highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
+
+                            main.field.Children.Add(highlithh);
+                            Canvas.SetTop(highlithh, (s) * (1000 / 8) + 10);
+                            Canvas.SetLeft(highlithh, (d) * (1000 / 8) + 10);
+                        }
+                    }
+                    catch { }
+                    break;
             }
         }
 
@@ -473,7 +1372,9 @@ namespace Bitchess
                 {
                     main.log.Text += "\n";
                 }
-            }              
+            }
+
+            ((Controler)main.contr).turnchange();
         }
 
         public void take(object sneder, System.Windows.Input.MouseButtonEventArgs e)
@@ -503,6 +1404,8 @@ namespace Bitchess
             {
                 main.log.Text += "\n";
             }
+
+            ((Controler)main.contr).turnchange();
         }
     }
 
