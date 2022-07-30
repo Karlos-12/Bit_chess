@@ -180,5 +180,10 @@ namespace Bitchess
                 Canvas.SetLeft(Figurelist[c].image, Figurelist[c].x * (1000/8));
             }
         }
+
+        public void ende()
+        {
+
+        }
     }
 }
