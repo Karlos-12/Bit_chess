@@ -104,12 +104,12 @@
         <Border x:Name="bord" BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Padding="5,5,5,5" HorizontalAlignment="Center" Width="1040" Height="1040" VerticalAlignment="Center">
             <Canvas x:Name="field" Margin="0,0,0,0"/>
         </Border>
-        <Border BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Grid.Column="1" Margin="0,201,59,52">
+        <Border BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Grid.Column="1" Margin="0,201,59,0">
             <ScrollViewer HorizontalAlignment="Left" Width="552" Margin="0,0,0,-5">
                 <TextBlock Style="{DynamicResource TextBlockStyle1}" x:Name="log" TextWrapping="Wrap" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Foreground="#FF023E00" Height="2021" Width="530"/>
             </ScrollViewer>
         </Border>
-        <Button Style="{DynamicResource ButtonStyle1}" Grid.Column="1" Content="New game" Height="151" Margin="10,10,59,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Grid.Column="1" Content="New game" Height="151" Margin="0,10,59,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click"/>
         <Border x:Name="bord_Copy" BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Padding="5,5,5,5" HorizontalAlignment="Left" Width="158" Height="1040" VerticalAlignment="Center" Margin="10,0,0,0">
             <Label x:Name="indc" Content="Label" Margin="-446,460,-430,442" Background="{x:Null}" Foreground="#FF023E00" FontFamily="Consolas" FontSize="64" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <Label.RenderTransform>
