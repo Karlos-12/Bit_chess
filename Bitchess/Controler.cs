@@ -96,6 +96,25 @@ namespace Bitchess
                 board[0, 4] = non13;
             }
 
+            //Horses
+            {
+                Figure non14 = new Figure(FigureType.knight, Side.black, 0, 1, "Black_Knight_" + 0, main);
+                Figurelist.Add(non14);
+                board[0, 1] = non14;
+
+                Figure non15 = new Figure(FigureType.knight, Side.black, 0, 6, "Black_Knight_" + 1, main);
+                Figurelist.Add(non15);
+                board[0, 6] = non15;
+
+                Figure non16 = new Figure(FigureType.knight, Side.white, 7, 1, "White_Knight_" + 0, main);
+                Figurelist.Add(non16);
+                board[7, 1] = non16;
+
+                Figure non17 = new Figure(FigureType.knight, Side.white, 7, 6, "White_Knight_" + 1, main);
+                Figurelist.Add(non17);
+                board[7, 6] = non17;
+            }
+
             paint();
             turnchange();
         }
