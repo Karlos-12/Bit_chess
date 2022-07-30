@@ -26,14 +26,15 @@ namespace Bitchess
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(false);
+            MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
         }
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(true);
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.setline();
             
             Onlinemanager onlinemanager = new Onlinemanager(mainWindow, "_1");
 

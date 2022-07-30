@@ -20,19 +20,21 @@ namespace Bitchess
         public Onlinemanager(MainWindow m, string path)
         {
             main = m;
+            m.assing(this);
             this.path = path;
             config.BasePath += path;
             countec = 0;
             DispatcherTimer dispatcher = new DispatcherTimer();
             dispatcher.Interval = new TimeSpan(0,0,1);
             dispatcher.Tick += new EventHandler(Tick_tack);
+            client = new FirebaseClient(config);
             dispatcher.Start();
         }
 
         IFirebaseClient client;
         IFirebaseConfig config = new FirebaseConfig()
         {
-            AuthSecret = "",
+            AuthSecret = "uOYoVTwVX3BYe9dF8V7QaSUgfL9eF9n6ApAuoAJX",
              BasePath = "https://bitchess-6cf4b-default-rtdb.europe-west1.firebasedatabase.app/"
         };
 
@@ -42,7 +44,7 @@ namespace Bitchess
             if(cntp != countec)
             {
                 countec++;
-                movetake move = client.Get(countec.ToString()).ResultAs<movetake>();
+                movetake move = client.Get("moves/" + countec.ToString()).ResultAs<movetake>();
 
                 if(move.move == true)
                 {
@@ -66,6 +68,9 @@ namespace Bitchess
         public void tmov(int ind, int ys, int xs, bool mv)
         {
             movetake mov = new movetake(ind, xs, ys, mv);
+            countec++;
+            client.Set("moves/" + countec, mov);
+            client.Set("count", countec);
         }
     }
 }
