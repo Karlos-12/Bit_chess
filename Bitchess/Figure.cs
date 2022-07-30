@@ -127,23 +127,27 @@ namespace Bitchess
                                 Canvas.SetTop(highlith, (y - 2) * (1000 / 8) + 10);
                                 Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
                             }
-                            if (((Controler)main.contr).board[y-1, x] == null)
+                            try
                             {
-                                Border highlith = new Border()
+                                if (((Controler)main.contr).board[y - 1, x] == null)
                                 {
-                                    BorderThickness = new System.Windows.Thickness(5),
-                                    BorderBrush = new SolidColorBrush(Colors.Green),
-                                    Height = 1000 / 8,
-                                    Width = 1000 / 8,
-                                    Tag = new int[] { y - 1, x }
-                                };
-                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+                                    Border highlith = new Border()
+                                    {
+                                        BorderThickness = new System.Windows.Thickness(5),
+                                        BorderBrush = new SolidColorBrush(Colors.Green),
+                                        Height = 1000 / 8,
+                                        Width = 1000 / 8,
+                                        Tag = new int[] { y - 1, x }
+                                    };
+                                    highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
-                                main.field.Children.Add(highlith);
-                                Canvas.SetTop(highlith, (y - 1) * (1000 / 8) + 10);
-                                Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
-                                
+                                    main.field.Children.Add(highlith);
+                                    Canvas.SetTop(highlith, (y - 1) * (1000 / 8) + 10);
+                                    Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+
+                                }
                             }
+                            catch { }
                             try
                             {
                                 if (((Controler)main.contr).board[y - 1, x + 1].side == Side.black)
@@ -201,15 +205,32 @@ namespace Bitchess
         public void move(object sneder, System.Windows.Input.MouseButtonEventArgs e)
         {
             Border nol = (Border)sneder;
-            main.log.Text += y + "_" + x + " ---> " + ((int[])nol.Tag)[0] + "_" + ((int[])nol.Tag)[1] + "\n";
-            y = ((int[])nol.Tag)[0];
-            x = ((int[])nol.Tag)[1];
-            ((Controler)main.contr).paint();
+            if ((((int[])nol.Tag)[0] < 8 && ((int[])nol.Tag)[0] > -1) && (((int[])nol.Tag)[1] < 8 && ((int[])nol.Tag)[1] > -1))
+            {
+                ((Controler)main.contr).board[y, x] = null;
+                ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]] = this;
+
+                main.log.Text += y + "_" + x + " ---> " + ((int[])nol.Tag)[0] + "_" + ((int[])nol.Tag)[1] + "\n";
+                y = ((int[])nol.Tag)[0];
+                x = ((int[])nol.Tag)[1];
+                ((Controler)main.contr).paint();
+            }
         }
 
         public void take(object sneder, System.Windows.Input.MouseButtonEventArgs e)
         {
+            Border nol = (Border)sneder;
+            
+            main.log.Text += y + "_" + x + " ---> " + ((int[])nol.Tag)[0] + "_" + ((int[])nol.Tag)[1] + " take out" + "\n";
 
+            Figure nols = ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]];
+            ((Controler)main.contr).Figurelist.RemoveAt(((Controler)main.contr).Figurelist.IndexOf(nols));
+
+            y = ((int[])nol.Tag)[0];
+            x = ((int[])nol.Tag)[1];
+
+            ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]] = this;
+            ((Controler)main.contr).paint();
         }
     }
 
