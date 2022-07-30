@@ -1777,6 +1777,11 @@ namespace Bitchess
             }
 
             ((Controler)main.contr).turnchange();
+
+            íf(main.online == true)
+            {
+                main.send_up(((Controler)main.contr).Figurelist.IndexOf(this), y, x, true);
+            }
         }
 
         public void take(object sneder, System.Windows.Input.MouseButtonEventArgs e)
@@ -1813,6 +1818,11 @@ namespace Bitchess
             }
 
             ((Controler)main.contr).turnchange();
+
+            íf(main.online == true)
+            {
+                main.send_up(((Controler)main.contr).Figurelist.IndexOf(this), y, x, false);
+            }
         }
     }
 

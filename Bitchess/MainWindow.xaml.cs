@@ -23,14 +23,28 @@ namespace Bitchess
     public partial class MainWindow : Window
     {
         Controler maincotr;
+        Onlinemanager onlineman;
         public object contr;
+        public bool online;
 
-        public MainWindow()
+        public MainWindow(bool online)
         {
             InitializeComponent();
             maincotr = new Controler(this);
             contr = maincotr;
             repaint();
+            this.online = online;
+            this.onlineman = onlineman;
+        }
+
+        public void send_up(int ind, int ys, int xs, bool mv)
+        {
+
+        }
+
+        public void assing(object o)
+        {
+            onlineman = (Onlinemanager)o;
         }
 
         public void repaint()
