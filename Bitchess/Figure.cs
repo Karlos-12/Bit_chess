@@ -71,10 +71,10 @@ namespace Bitchess
                             image.Source = new BitmapImage(new Uri("Images/whitebishop.png", UriKind.Relative));
                             break;
                         case FigureType.king:
-                            image.Source = new BitmapImage(new Uri("Images/white king.png", UriKind.Relative));
+                            image.Source = new BitmapImage(new Uri("Images/whiteking.png", UriKind.Relative));
                             break;
                         case FigureType.queen:
-                            image.Source = new BitmapImage(new Uri("Images/whiteking.png", UriKind.Relative));
+                            image.Source = new BitmapImage(new Uri("Images/whitequeen.png", UriKind.Relative));
                             break;
                         case FigureType.tower:
                             image.Source = new BitmapImage(new Uri("Images/whitetower.png", UriKind.Relative));

@@ -15,11 +15,11 @@
     <None Remove="Images\blackpawn.png" />
     <None Remove="Images\blackqueen.png" />
     <None Remove="Images\Blacktower.png" />
-    <None Remove="Images\white king.png" />
     <None Remove="Images\whitebishop.png" />
     <None Remove="Images\whitehorse.png" />
     <None Remove="Images\whiteking.png" />
     <None Remove="Images\whitepawn.png" />
+    <None Remove="Images\whitequeen.png" />
     <None Remove="Images\whitetower.png" />
   </ItemGroup>
 
@@ -42,7 +42,7 @@
     <Content Include="Images\Blacktower.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\white king.png">
+    <Content Include="Images\whitequeen.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\whitebishop.png">

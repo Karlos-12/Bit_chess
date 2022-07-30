@@ -62,6 +62,36 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ScrollViewerStyle1" TargetType="{x:Type ScrollViewer}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle x:Name="Corner" Grid.Column="1" Fill="#FF036100" Grid.Row="1"/>
+                            <ScrollBar x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" BorderBrush="{x:Null}" Background="#FF036100" Foreground="#FF012900"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="TextBlockStyle1" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="FlowDirection" Value="LeftToRight"/>
+        </Style>
     </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="/Bez dfgdnázvu.png" Stretch="UniformToFill"/>
@@ -75,7 +105,9 @@
             <Canvas x:Name="field" Margin="0,0,0,0"/>
         </Border>
         <Border BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Grid.Column="1" Margin="0,201,59,52">
-            <TextBlock x:Name="log" Margin="-5,0,0,0" TextWrapping="Wrap" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Foreground="#FF023E00"/>
+            <ScrollViewer HorizontalAlignment="Left" Width="552" Margin="0,0,0,-5">
+                <TextBlock Style="{DynamicResource TextBlockStyle1}" x:Name="log" TextWrapping="Wrap" FontWeight="Bold" FontSize="32" FontFamily="Consolas" Foreground="#FF023E00" Height="2021" Width="530"/>
+            </ScrollViewer>
         </Border>
         <Button Style="{DynamicResource ButtonStyle1}" Grid.Column="1" Content="New game" Height="151" Margin="10,10,59,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click"/>
         <Border x:Name="bord_Copy" BorderBrush="#FF023E00" BorderThickness="5,5,5,5" Padding="5,5,5,5" HorizontalAlignment="Left" Width="158" Height="1040" VerticalAlignment="Center" Margin="10,0,0,0">
