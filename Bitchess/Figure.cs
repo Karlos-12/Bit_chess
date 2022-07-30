@@ -123,7 +123,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] {y-2, x}
+                                    Tag = new int[] {y-2, x},
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -141,7 +142,8 @@ namespace Bitchess
                                         BorderBrush = new SolidColorBrush(Colors.Green),
                                         Height = 1000 / 8,
                                         Width = 1000 / 8,
-                                        Tag = new int[] { y - 1, x }
+                                        Tag = new int[] { y - 1, x },
+                                        Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                     };
                                     highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -162,7 +164,8 @@ namespace Bitchess
                                         BorderBrush = new SolidColorBrush(Colors.Red),
                                         Height = 1000 / 8,
                                         Width = 1000 / 8,
-                                        Tag = new int[] { y - 1, x + 1 }
+                                        Tag = new int[] { y - 1, x + 1 },
+                                        Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                     };
                                     highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -182,7 +185,8 @@ namespace Bitchess
                                         BorderBrush = new SolidColorBrush(Colors.Red),
                                         Height = 1000 / 8,
                                         Width = 1000 / 8,
-                                        Tag = new int[] { y - 1, x - 1 }
+                                        Tag = new int[] { y - 1, x - 1 },
+                                        Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                     };
                                     highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -202,7 +206,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { y + 2, x }
+                                    Tag = new int[] { y + 2, x },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -220,7 +225,8 @@ namespace Bitchess
                                         BorderBrush = new SolidColorBrush(Colors.Green),
                                         Height = 1000 / 8,
                                         Width = 1000 / 8,
-                                        Tag = new int[] { y + 1, x }
+                                        Tag = new int[] { y + 1, x },
+                                        Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                     };
                                     highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -241,7 +247,8 @@ namespace Bitchess
                                         BorderBrush = new SolidColorBrush(Colors.Red),
                                         Height = 1000 / 8,
                                         Width = 1000 / 8,
-                                        Tag = new int[] { y + 1, x + 1 }
+                                        Tag = new int[] { y + 1, x + 1 },
+                                        Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                     };
                                     highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -261,7 +268,8 @@ namespace Bitchess
                                         BorderBrush = new SolidColorBrush(Colors.Red),
                                         Height = 1000 / 8,
                                         Width = 1000 / 8,
-                                        Tag = new int[] { y + 1, x - 1 }
+                                        Tag = new int[] { y + 1, x - 1 },
+                                        Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                     };
                                     highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -286,7 +294,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -302,7 +311,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -329,7 +339,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
                    
@@ -345,7 +356,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
                    
@@ -372,7 +384,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -388,7 +401,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -415,7 +429,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -431,7 +446,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -463,7 +479,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _1, d }
+                                    Tag = new int[] { _1, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -479,7 +496,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Red),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _1, d }
+                                    Tag = new int[] { _1, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -513,7 +531,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _4, d }
+                                    Tag = new int[] { _4, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -529,7 +548,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Red),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _4, d }
+                                    Tag = new int[] { _4, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -563,7 +583,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _3, d }
+                                    Tag = new int[] { _3, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -579,7 +600,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Red),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _3, d }
+                                    Tag = new int[] { _3, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -613,7 +635,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _2, d }
+                                    Tag = new int[] { _2, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -629,7 +652,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Red),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _2, d }
+                                    Tag = new int[] { _2, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -660,7 +684,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -676,7 +701,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -703,7 +729,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -719,7 +746,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -746,7 +774,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -762,7 +791,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -789,7 +819,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -805,7 +836,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -836,7 +868,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _a, d }
+                                    Tag = new int[] { _a, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -852,7 +885,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Red),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _a, d }
+                                    Tag = new int[] { _a, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -886,7 +920,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _b, d }
+                                    Tag = new int[] { _b, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -902,7 +937,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Red),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _b, d }
+                                    Tag = new int[] { _b, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -936,7 +972,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _c, d }
+                                    Tag = new int[] { _c, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -952,7 +989,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Red),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _c, d }
+                                    Tag = new int[] { _c, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -986,7 +1024,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Green),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _d, d }
+                                    Tag = new int[] { _d, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1002,7 +1041,8 @@ namespace Bitchess
                                     BorderBrush = new SolidColorBrush(Colors.Red),
                                     Height = 1000 / 8,
                                     Width = 1000 / 8,
-                                    Tag = new int[] { _d, d }
+                                    Tag = new int[] { _d, d },
+                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                                 };
                                 highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1034,7 +1074,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1051,7 +1092,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1074,7 +1116,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1091,7 +1134,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { d, x }
+                                Tag = new int[] { d, x },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1114,7 +1158,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1131,7 +1176,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1154,7 +1200,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1171,7 +1218,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { y, d }
+                                Tag = new int[] { y, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1195,7 +1243,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1212,7 +1261,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1236,7 +1286,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1253,7 +1304,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1277,7 +1329,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1294,7 +1347,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1318,7 +1372,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1335,7 +1390,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1360,7 +1416,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1377,7 +1434,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1401,7 +1459,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1418,7 +1477,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1442,7 +1502,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1459,7 +1520,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1483,7 +1545,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1500,7 +1563,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1524,7 +1588,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1541,7 +1606,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1565,7 +1631,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1582,7 +1649,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1606,7 +1674,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1623,7 +1692,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
@@ -1647,7 +1717,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Green),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
@@ -1664,7 +1735,8 @@ namespace Bitchess
                                 BorderBrush = new SolidColorBrush(Colors.Red),
                                 Height = 1000 / 8,
                                 Width = 1000 / 8,
-                                Tag = new int[] { s, d }
+                                Tag = new int[] { s, d },
+                                Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
                             };
                             highlithh.MouseDown += new System.Windows.Input.MouseButtonEventHandler(take);
 
