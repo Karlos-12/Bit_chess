@@ -1,0 +1,21 @@
+﻿<Window x:Class="Bitchess.Newgame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bitchess"
+        mc:Ignorable="d"
+        Title="Newgame" Height="450" Width="800" Foreground="{x:Null}">
+    <Window.Background>
+        <ImageBrush ImageSource="/Bez dfgdnázvu.png"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Offline" Margin="132,35,132,35" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Content="Online" Margin="132,35,132,35" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click1" Grid.Row="1"/>
+
+    </Grid>
+</Window>

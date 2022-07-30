@@ -40,9 +40,8 @@ namespace Bitchess
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow news = new MainWindow();
-            news.Show();
-            Close();
+            Newgame newgame = new Newgame();
+            newgame.Show();
         }
     }
 }

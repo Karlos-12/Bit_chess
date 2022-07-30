@@ -63,6 +63,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FireSharp" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Bez dfgdnázvu.png" />
   </ItemGroup>
 
