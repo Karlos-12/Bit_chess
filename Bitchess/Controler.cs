@@ -33,6 +33,26 @@ namespace Bitchess
                 board[6, i] = non2;
             }
 
+            //Towers
+            {
+                Figure non3 = new Figure(FigureType.tower, Side.black, 0, 0, "Black_tower_" + 0, main);
+                Figurelist.Add(non3);
+                board[0, 0] = non3;
+
+                Figure non4 = new Figure(FigureType.tower, Side.black, 0, 7, "Black_tower_" + 1, main);
+                Figurelist.Add(non4);
+                board[0, 7] = non4;
+
+                Figure non6 = new Figure(FigureType.tower, Side.white, 7, 0, "White_tower_" + 0, main);
+                Figurelist.Add(non6);
+                board[7, 0] = non6;
+
+                Figure non5 = new Figure(FigureType.tower, Side.white, 7, 7, "White_tower_" + 1, main);
+                Figurelist.Add(non5);
+                board[7, 7] = non5;
+            }
+            
+
             paint();
         }
 
