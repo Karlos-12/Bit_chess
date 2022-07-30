@@ -39,7 +39,7 @@ namespace Bitchess
 
         public void send_up(int ind, int ys, int xs, bool mv)
         {
-
+            onlineman.tmov(ind, ys, xs, mv);
         }
 
         public void assing(object o)

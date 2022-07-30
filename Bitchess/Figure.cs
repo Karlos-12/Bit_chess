@@ -1778,7 +1778,7 @@ namespace Bitchess
 
             ((Controler)main.contr).turnchange();
 
-            íf(main.online == true)
+            if (main.online == true)
             {
                 main.send_up(((Controler)main.contr).Figurelist.IndexOf(this), y, x, true);
             }
@@ -1819,7 +1819,7 @@ namespace Bitchess
 
             ((Controler)main.contr).turnchange();
 
-            íf(main.online == true)
+            if(main.online == true)
             {
                 main.send_up(((Controler)main.contr).Figurelist.IndexOf(this), y, x, false);
             }
