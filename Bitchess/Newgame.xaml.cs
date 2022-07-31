@@ -23,7 +23,15 @@ namespace Bitchess
         public Newgame(MainWindow main)
         {
             InitializeComponent();
-            main.Close();
+            try
+            {
+                main.Close();
+            }
+            catch
+            {
+
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

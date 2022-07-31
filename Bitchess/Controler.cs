@@ -224,7 +224,7 @@ namespace Bitchess
 
             main.resert();
 
-            MainWindow ne = new MainWindow();
+            Newgame ne = new Newgame(null);
             ne.Show();
             main.Close();
         }
