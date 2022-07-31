@@ -19,6 +19,7 @@ namespace Bitchess
     /// </summary>
     public partial class Newgame : Window
     {
+        string server = "_1";
         public Newgame(MainWindow main)
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace Bitchess
                 lol = Side.black;
             }
 
-            Onlinemanager onlinemanager = new Onlinemanager(mainWindow, "_1", lol);
+            Onlinemanager onlinemanager = new Onlinemanager(mainWindow, server, lol);
 
             mainWindow.Show();
             Close();
@@ -70,6 +71,36 @@ namespace Bitchess
         {
             r1.IsChecked = false;
             _1 = false;
+        }
+
+        private void s1(object sender, RoutedEventArgs e)
+        {
+            server = "_1";
+        }
+
+        private void s2(object sender, RoutedEventArgs e)
+        {
+            server = "_2";
+        }
+
+        private void s3(object sender, RoutedEventArgs e)
+        {
+            server = "_3";
+        }
+
+        private void s4(object sender, RoutedEventArgs e)
+        {
+            server = "_4";
+        }
+
+        private void s5(object sender, RoutedEventArgs e)
+        {
+            server = "_5";
+        }
+
+        private void s6(object sender, RoutedEventArgs e)
+        {
+            server = "_6";
         }
     }
 }

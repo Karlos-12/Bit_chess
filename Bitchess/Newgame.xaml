@@ -301,6 +301,14 @@
         <Button Content="Online" Margin="132,35,132,35" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click1" Grid.Row="1"/>
         <RadioButton x:Name="r1" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="24" FontWeight="Bold" FontFamily="Consolas" Content="White" IsChecked="True" Margin="10,0,682,187" Grid.RowSpan="2" Height="30" VerticalAlignment="Bottom" Checked="r1_Checked"/>
         <RadioButton x:Name="r2" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="24" FontWeight="Bold" FontFamily="Consolas" Content="Black" Margin="10,0,682,155" Grid.Row="1" Height="27" VerticalAlignment="Bottom" Checked="r2_Checked"/>
+        <StackPanel Margin="673,207,10,10" Grid.RowSpan="2">
+            <RadioButton x:Name="r1_Copy" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="20" FontWeight="Bold" FontFamily="Consolas" Content="Servr _1" IsChecked="True" Height="36" Checked="s1" Width="124"/>
+            <RadioButton x:Name="r1_Copy1" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="20" FontWeight="Bold" FontFamily="Consolas" Content="Servr _2" IsChecked="True" Height="36" Checked="s2" Width="124"/>
+            <RadioButton x:Name="r1_Copy2" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="20" FontWeight="Bold" FontFamily="Consolas" Content="Servr _3" IsChecked="True" Height="35" Checked="s3" Width="124"/>
+            <RadioButton x:Name="r1_Copy3" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="20" FontWeight="Bold" FontFamily="Consolas" Content="Servr _4" IsChecked="True" Height="35" Checked="s4" Width="124"/>
+            <RadioButton x:Name="r1_Copy4" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="20" FontWeight="Bold" FontFamily="Consolas" Content="Servr _5" IsChecked="True" Height="34" Checked="s5" Width="124"/>
+            <RadioButton x:Name="r1_Copy5" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="20" FontWeight="Bold" FontFamily="Consolas" Content="Servr _6" IsChecked="True" Height="35" Checked="s6" Width="124"/>
+        </StackPanel>
 
     </Grid>
 </Window>
