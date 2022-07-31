@@ -35,6 +35,7 @@ namespace Bitchess
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
+
             MainWindow mainWindow = new MainWindow();
             mainWindow.setline();
             Side lol = Side.white;
@@ -50,6 +51,7 @@ namespace Bitchess
             }
 
             Onlinemanager onlinemanager = new Onlinemanager(mainWindow, server, lol);
+            mainWindow.assing(onlinemanager);
 
             mainWindow.Show();
             Close();

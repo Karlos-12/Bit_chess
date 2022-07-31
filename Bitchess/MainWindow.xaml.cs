@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FireSharp;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +27,7 @@ namespace Bitchess
     {
         Controler maincotr;
         Onlinemanager onlineman;
+        public object ommm;
         public object contr;
         public bool online = false;
 
@@ -34,8 +38,10 @@ namespace Bitchess
             InitializeComponent();
             maincotr = new Controler(this);
             contr = maincotr;
+            ommm = onlineman;
             repaint();
         }
+
 
         public void setline()
         {
@@ -70,6 +76,11 @@ namespace Bitchess
                 FileName = "https://www.wikihow.com/Play-Chess-for-Beginners",
                 UseShellExecute = true
             });
+        }
+
+        public void resert()
+        {
+            onlineman.resert();
         }
     }
 }

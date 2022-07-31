@@ -219,6 +219,14 @@ namespace Bitchess
             }
             main.log.Text += " \n __Game has ended__";
             main.indc.Content = "Game has ended";
+
+            Task.Delay(10000);
+
+            main.resert();
+
+            MainWindow ne = new MainWindow();
+            ne.Show();
+            main.Close();
         }
     }
 }

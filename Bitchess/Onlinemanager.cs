@@ -23,6 +23,7 @@ namespace Bitchess
         {
             main = m;
             urs = side;
+            
             m.assing(this);
             this.path = path;
             config.BasePath += path;
@@ -89,6 +90,12 @@ namespace Bitchess
             countec++;
             client.Set("moves/" + countec, mov);
             client.Set("count", countec);
+        }
+
+        public void resert()
+        {
+            client.Delete("moves");
+            client.Set("count", 0);
         }
     }
 }
