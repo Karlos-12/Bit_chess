@@ -1795,6 +1795,8 @@ namespace Bitchess
 
         public void take(object sneder, System.Windows.Input.MouseButtonEventArgs e)
         {
+            int bae = ((Controler)main.contr).Figurelist.IndexOf(this);
+
             Border nol = (Border)sneder;
             
             main.log.Text += y + "_" + x + " ---> " + ((int[])nol.Tag)[0] + "_" + ((int[])nol.Tag)[1] + " take out";
@@ -1804,12 +1806,6 @@ namespace Bitchess
             int jentak = ((Controler)main.contr).Figurelist.IndexOf(nols);
             ((Controler)main.contr).Figurelist.RemoveAt(jentak);
 
-            int cs = ((Controler)main.contr).Figurelist.FindIndex(look);
-            if(cs >= 0)
-            {
-                ((Controler)main.contr).Figurelist.RemoveAt(cs);
-                //chlapče měníš indexi tím že vyděláváš z listu ale v databázi se nic nemění ty jebo
-            }
 
             if ((((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]]).Type == FigureType.king)
             {
@@ -1839,7 +1835,7 @@ namespace Bitchess
 
             if(main.online == true && e != null)
             {
-                main.send_up(((Controler)main.contr).Figurelist.IndexOf(this), y, x, false);
+                main.send_up(bae, y, x, false);
             }
         }
     }

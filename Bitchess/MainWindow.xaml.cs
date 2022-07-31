@@ -59,7 +59,7 @@ namespace Bitchess
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Newgame newgame = new Newgame();
+            Newgame newgame = new Newgame(this);
             newgame.Show();
         }
     }

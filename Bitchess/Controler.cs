@@ -149,8 +149,37 @@ namespace Bitchess
                     item.image.IsEnabled = true;
                 }
             }
+
+            if(fgf == true)
+            {
+                if(inds == Side.white)
+                {
+                    List<Figure> nuls = Figurelist.FindAll(isblack);
+                    foreach (var item in nuls)
+                    {
+                        item.image.IsEnabled = false;
+                    }
+                }
+                else if (inds == Side.black)
+                {
+                    List<Figure> nuls = Figurelist.FindAll(iswite);
+                    foreach (var item in nuls)
+                    {
+                        item.image.IsEnabled = false;
+                    }
+                }
+            }
+
             main.indc.Content = turn.ToString();
             paint();
+        }
+
+        public bool fgf = false;
+        Side inds = Side.white;
+        public void setlln(Side s)
+        {
+            fgf = true;
+            inds = s;
         }
 
         private static bool iswite(Figure f)

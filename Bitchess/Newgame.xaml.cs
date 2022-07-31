@@ -19,9 +19,10 @@ namespace Bitchess
     /// </summary>
     public partial class Newgame : Window
     {
-        public Newgame()
+        public Newgame(MainWindow main)
         {
             InitializeComponent();
+            main.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,11 +36,40 @@ namespace Bitchess
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.setline();
-            
-            Onlinemanager onlinemanager = new Onlinemanager(mainWindow, "_1");
+            Side lol = Side.white;
+
+            if(_1 == true)
+            {
+                lol = Side.white;
+            }
+
+            if(_1 == false)
+            {
+                lol = Side.black;
+            }
+
+            Onlinemanager onlinemanager = new Onlinemanager(mainWindow, "_1", lol);
 
             mainWindow.Show();
             Close();
+        }
+
+        bool _1 = true;
+
+        private void r1_Checked(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                r2.IsChecked = false;
+                _1 = true;
+            }
+            catch { }
+        }
+
+        private void r2_Checked(object sender, RoutedEventArgs e)
+        {
+            r1.IsChecked = false;
+            _1 = false;
         }
     }
 }

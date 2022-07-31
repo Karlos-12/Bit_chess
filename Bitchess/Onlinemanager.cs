@@ -17,9 +17,12 @@ namespace Bitchess
         public string path { get; set; }
         private int countec { get; set; }
 
-        public Onlinemanager(MainWindow m, string path)
+        public Side urs { get; set; }
+
+        public Onlinemanager(MainWindow m, string path, Side side)
         {
             main = m;
+            urs = side;
             m.assing(this);
             this.path = path;
             config.BasePath += path;
@@ -38,6 +41,8 @@ namespace Bitchess
              BasePath = "https://bitchess-6cf4b-default-rtdb.europe-west1.firebasedatabase.app/"
         };
 
+        bool test = false;
+
         public void Tick_tack(object sender, EventArgs e)
         {
             int cntp = client.Get("count").ResultAs<int>();
@@ -47,6 +52,7 @@ namespace Bitchess
                 {
                     countec++;
                     movetake move = client.Get("moves/" + countec.ToString()).ResultAs<movetake>();
+                    
 
                     if (move.move == true)
                     {
@@ -57,8 +63,17 @@ namespace Bitchess
                     }
                     else if (move.move == false)
                     {
+                        ((Controler)main.contr).setlln(urs);
+
                         Figure f = ((Controler)main.contr).Figurelist[move.indx];
                         Border b = new Border();
+
+                        if (test = false)
+                        {
+                            test = true;
+                            move.indx++;
+                        }
+
                         b.Tag = new int[] { move.ny, move.nx };
                         f.take(b, null);
                     }
