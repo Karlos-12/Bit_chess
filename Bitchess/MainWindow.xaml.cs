@@ -80,7 +80,12 @@ namespace Bitchess
 
         public void resert()
         {
-            onlineman.resert();
+            try
+            {
+                onlineman.resert();
+            }
+            catch
+            { }
         }
     }
 }
