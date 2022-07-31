@@ -1751,6 +1751,15 @@ namespace Bitchess
             }
         }
 
+        public bool look(Figure f)
+        {
+            if(f.y == y && f.x == x)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void move(object sneder, System.Windows.Input.MouseButtonEventArgs e)
         {
             Border nol = (Border)sneder;
@@ -1791,9 +1800,18 @@ namespace Bitchess
             main.log.Text += y + "_" + x + " ---> " + ((int[])nol.Tag)[0] + "_" + ((int[])nol.Tag)[1] + " take out";
 
             Figure nols = ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]];
-            ((Controler)main.contr).Figurelist.RemoveAt(((Controler)main.contr).Figurelist.IndexOf(nols));
 
-            if((((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]]).Type == FigureType.king)
+            int jentak = ((Controler)main.contr).Figurelist.IndexOf(nols);
+            ((Controler)main.contr).Figurelist.RemoveAt(jentak);
+
+            int cs = ((Controler)main.contr).Figurelist.FindIndex(look);
+            if(cs >= 0)
+            {
+                ((Controler)main.contr).Figurelist.RemoveAt(cs);
+                //chlapče měníš indexi tím že vyděláváš z listu ale v databázi se nic nemění ty jebo
+            }
+
+            if ((((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]]).Type == FigureType.king)
             {
                 ((Controler)main.contr).ende();
             }

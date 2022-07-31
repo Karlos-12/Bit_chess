@@ -150,6 +150,7 @@ namespace Bitchess
                 }
             }
             main.indc.Content = turn.ToString();
+            paint();
         }
 
         private static bool iswite(Figure f)
