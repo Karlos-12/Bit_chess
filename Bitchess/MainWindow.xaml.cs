@@ -62,5 +62,14 @@ namespace Bitchess
             Newgame newgame = new Newgame(this);
             newgame.Show();
         }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://www.wikihow.com/Play-Chess-for-Beginners",
+                UseShellExecute = true
+            });
+        }
     }
 }
