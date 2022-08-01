@@ -117,20 +117,23 @@ namespace Bitchess
                         case Side.white:
                             if(y == 6)
                             {
-                                Border highlith = new Border()
+                                if (((Controler)main.contr).board[y - 1, x] == null)
                                 {
-                                    BorderThickness = new System.Windows.Thickness(5),
-                                    BorderBrush = new SolidColorBrush(Colors.Green),
-                                    Height = 1000 / 8,
-                                    Width = 1000 / 8,
-                                    Tag = new int[] {y-2, x},
-                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
-                                };
-                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+                                    Border highlith = new Border()
+                                    {
+                                        BorderThickness = new System.Windows.Thickness(5),
+                                        BorderBrush = new SolidColorBrush(Colors.Green),
+                                        Height = 1000 / 8,
+                                        Width = 1000 / 8,
+                                        Tag = new int[] { y - 2, x },
+                                        Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
+                                    };
+                                    highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
-                                main.field.Children.Add(highlith);
-                                Canvas.SetTop(highlith, (y - 2) * (1000 / 8) + 10);
-                                Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                                    main.field.Children.Add(highlith);
+                                    Canvas.SetTop(highlith, (y - 2) * (1000 / 8) + 10);
+                                    Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                                }
                             }
                             try
                             {
@@ -200,20 +203,23 @@ namespace Bitchess
                         case Side.black:
                             if (y == 1)
                             {
-                                Border highlith = new Border()
+                                if (((Controler)main.contr).board[y + 1, x] == null)
                                 {
-                                    BorderThickness = new System.Windows.Thickness(5),
-                                    BorderBrush = new SolidColorBrush(Colors.Green),
-                                    Height = 1000 / 8,
-                                    Width = 1000 / 8,
-                                    Tag = new int[] { y + 2, x },
-                                    Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
-                                };
-                                highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
+                                    Border highlith = new Border()
+                                    {
+                                        BorderThickness = new System.Windows.Thickness(5),
+                                        BorderBrush = new SolidColorBrush(Colors.Green),
+                                        Height = 1000 / 8,
+                                        Width = 1000 / 8,
+                                        Tag = new int[] { y + 2, x },
+                                        Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0))
+                                    };
+                                    highlith.MouseDown += new System.Windows.Input.MouseButtonEventHandler(move);
 
-                                main.field.Children.Add(highlith);
-                                Canvas.SetTop(highlith, (y + 2) * (1000 / 8) + 10);
-                                Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                                    main.field.Children.Add(highlith);
+                                    Canvas.SetTop(highlith, (y + 2) * (1000 / 8) + 10);
+                                    Canvas.SetLeft(highlith, (x) * (1000 / 8) + 10);
+                                }
                             }
                             try
                             {
