@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Bitchess
 {
@@ -30,6 +31,7 @@ namespace Bitchess
         public object ommm;
         public object contr;
         public bool online = false;
+        TimeOnly onlinetime = new TimeOnly(0,0,0);
 
 #pragma warning disable CS8618 // Pole, které nemůže být null, musí při ukončování konstruktoru obsahovat hodnotu, která není null. Zvažte možnost deklarovat ho jako pole s možnou hodnotou null.
         public MainWindow()
@@ -40,8 +42,20 @@ namespace Bitchess
             contr = maincotr;
             ommm = onlineman;
             repaint();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0,0,1);
+            timer.Tick += new EventHandler(zimu);
+            timer.Start();
         }
 
+        private void zimu(object sender, EventArgs e)
+        {
+            if(online == false)
+            {
+                //onlinetime.Add( new TimeSpan(0, 0, 1));
+                tim.Content = onlinetime.ToString();
+            }
+        }
 
         public void setline()
         {
@@ -65,6 +79,10 @@ namespace Bitchess
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if(online == true)
+            {
+                onlineman.resert();
+            }
             Newgame newgame = new Newgame(this);
             newgame.Show();
         }
