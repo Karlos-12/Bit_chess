@@ -123,9 +123,6 @@
             </Label>
         </Border>
         <Label Content="Help" Margin="2,0,1210,10" FontFamily="Consolas" FontSize="24" FontWeight="Bold" Background="{x:Null}" Foreground="#FF023E00" HorizontalContentAlignment="Center" MouseDown="Label_MouseDown" Height="58" VerticalAlignment="Bottom"/>
-        <Border BorderBrush="#FF023E00" BorderThickness="5,5,5,5" HorizontalAlignment="Left" Margin="10,0,0,0" Width="146" Height="67" VerticalAlignment="Top">
-            <Label x:Name="tim" Content="Label"  Margin="0,0,0,0" Background="{x:Null}" Foreground="#FF036900" FontSize="32" FontFamily="Consolas" FontWeight="Bold" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
-        </Border>
 
     </Grid>
 </Window>
