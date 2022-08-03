@@ -1815,7 +1815,7 @@ namespace Bitchess
 
             if ((((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]]).Type == FigureType.king)
             {
-                ((Controler)main.contr).ende();
+                ((Controler)main.contr).ende((((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]]));
             }
 
             ((Controler)main.contr).board[y, x] = null;

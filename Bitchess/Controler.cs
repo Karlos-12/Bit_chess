@@ -211,7 +211,7 @@ namespace Bitchess
             }
         }
 
-        public void ende()
+        public void ende(Figure figure)
         {
             foreach (var item in Figurelist)
             {
@@ -221,9 +221,12 @@ namespace Bitchess
             main.indc.Content = "Game has ended";
 
             Task.Delay(10000);
-
             main.resert();
 
+            
+
+            resultscreen res = new resultscreen(figure.side);
+            res.Show();
             Newgame ne = new Newgame(null);
             ne.Show();
             main.Close();
