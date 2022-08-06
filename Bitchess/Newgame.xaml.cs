@@ -36,6 +36,11 @@ namespace Bitchess
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+            if(fen.Text != "Fen..." || fen.Text != null)
+            {
+                mainWindow.fen = fen.Text;
+                mainWindow.lol();
+            }
             mainWindow.Show();
             Close();
         }

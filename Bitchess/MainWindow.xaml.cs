@@ -31,6 +31,7 @@ namespace Bitchess
         public object ommm;
         public object contr;
         public bool online = false;
+        public string fen;
 
 #pragma warning disable CS8618 // Pole, které nemůže být null, musí při ukončování konstruktoru obsahovat hodnotu, která není null. Zvažte možnost deklarovat ho jako pole s možnou hodnotou null.
         public MainWindow()
@@ -41,6 +42,11 @@ namespace Bitchess
             contr = maincotr;
             ommm = onlineman;
             repaint();
+        }
+
+        public void lol()
+        {
+            maincotr.fenset(fen);
         }
 
         public void setline()
