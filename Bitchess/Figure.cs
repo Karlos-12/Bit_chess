@@ -1818,15 +1818,7 @@ namespace Bitchess
                 ((Controler)main.contr).ende((((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]]));
             }
 
-            ((Controler)main.contr).board[y, x] = null;
-
-            y = ((int[])nol.Tag)[0];
-            x = ((int[])nol.Tag)[1];
-
-            ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]] = this;
-            ((Controler)main.contr).paint();
-
-            if (Type == FigureType.pawn && (y == 0 || y == 7))
+            if ((Type == FigureType.pawn && (y == 0 || y == 7)) && ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]].Type != FigureType.king)
             {
                 Pawnchooser chooser = new Pawnchooser(this);
                 chooser.Show();
@@ -1837,6 +1829,14 @@ namespace Bitchess
                 main.log.Text += "\n";
             }
 
+            ((Controler)main.contr).board[y, x] = null;
+
+            y = ((int[])nol.Tag)[0];
+            x = ((int[])nol.Tag)[1];
+
+            ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]] = this;
+            ((Controler)main.contr).paint();
+          
             ((Controler)main.contr).turnchange();
 
             if(main.online == true && e != null)
