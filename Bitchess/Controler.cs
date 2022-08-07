@@ -22,7 +22,7 @@ namespace Bitchess
             Figurelist = new List<Figure>();
             board = new Figure[8, 8];
 
-            if (main.fen == null)
+            if (main.fen ==  "Fen..." || main.fen == "" || main.fen == null)
             {
                 basic();
             }

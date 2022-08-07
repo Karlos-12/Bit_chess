@@ -46,7 +46,14 @@ namespace Bitchess
 
         public void lol()
         {
-            maincotr.fenset(fen);
+            if (fen == "Fen..." || fen == "" || fen == null)
+            {
+
+            }
+            else
+            {
+                maincotr.fenset(fen);
+            }
         }
 
         public void setline()
