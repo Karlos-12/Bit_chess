@@ -140,18 +140,21 @@ namespace Bitchess
 
         public void fenset(string f)
         {
+            Figurelist.Clear();
+            board = new Figure[8, 8];
             fen = f;
             int y = 0;
             int x = 0;
-            for(int u = 0; u < fen.Length; u++)
+            for (int u = 0; u < fen.Length; u++)
             {
-                bool end = false;
-                if (y == 7 && end == true)
+                
+                if (y == 7 && x == 8)
                 {
                     string tump = fen.Substring(u +1);
                     if(tump == "w" || tump == "W")
                     {
-                        //null
+                        turnchange();
+                        turnchange();
                     }
                     else if (tump == "b" || tump == "B")
                     {
@@ -161,107 +164,104 @@ namespace Bitchess
                 else
                 {
                     string temp = fen.Substring(u, 1);
-                    try
+                    if(temp == "/")
                     {
-                        int tomp = int.Parse(temp);
-                        x += tomp;
-                        if (x == 8)
-                        {
-                            x = 0;
-                            y++;
-                        }
+                        y++;
+                        x = 0;
                     }
-                    catch
+                    else
                     {
-                        switch (temp)
+                        try
                         {
-                            case "P":
-                                Figure non1 = new Figure(FigureType.pawn, Side.white, y, x, "White_pawn_" + u, main);
-                                Figurelist.Add(non1);
-                                board[y, x] = non1;
-                                break;
-
-                            case "R":
-                                Figure non2 = new Figure(FigureType.tower, Side.white, y, x, "White_tower_" + u, main);
-                                Figurelist.Add(non2);
-                                board[y, x] = non2;
-                                break;
-
-                            case "B":
-                                Figure non3 = new Figure(FigureType.bishop, Side.white, y, x, "White_tower_" + u, main);
-                                Figurelist.Add(non3);
-                                board[y, x] = non3;
-                                break;
-
-                            case "Q":
-                                Figure non4 = new Figure(FigureType.queen, Side.white, y, x, "White_queen_" + u, main);
-                                Figurelist.Add(non4);
-                                board[y, x] = non4;
-                                break;
-
-                            case "K":
-                                Figure non5 = new Figure(FigureType.king, Side.white, y, x, "White_king_" + u, main);
-                                Figurelist.Add(non5);
-                                board[y, x] = non5;
-                                break;
-
-                            case "H":
-                                Figure non6 = new Figure(FigureType.knight, Side.white, y, x, "White_horse_" + u, main);
-                                Figurelist.Add(non6);
-                                board[y, x] = non6;
-                                break;
-
-
-                            case "p":
-                                Figure non11 = new Figure(FigureType.pawn, Side.black, y, x, "Black_pawn_" + u, main);
-                                Figurelist.Add(non11);
-                                board[y, x] = non11;
-                                break;
-
-                            case "r":
-                                Figure non12 = new Figure(FigureType.tower, Side.black, y, x, "Black_tower_" + u, main);
-                                Figurelist.Add(non12);
-                                board[y, x] = non12;
-                                break;
-
-                            case "b":
-                                Figure non13 = new Figure(FigureType.bishop, Side.black, y, x, "Black_bishop_" + u, main);
-                                Figurelist.Add(non13);
-                                board[y, x] = non13;
-                                break;
-
-                            case "q":
-                                Figure non14 = new Figure(FigureType.queen, Side.black, y, x, "Black_queen_" + u, main);
-                                Figurelist.Add(non14);
-                                board[y, x] = non14;
-                                break;
-
-                            case "k":
-                                Figure non15 = new Figure(FigureType.king, Side.black, y, x, "Black_king_" + u, main);
-                                Figurelist.Add(non15);
-                                board[y, x] = non15;
-                                break;
-
-                            case "h":
-                                Figure non16 = new Figure(FigureType.knight, Side.black, y, x, "Black_knight_" + u, main);
-                                Figurelist.Add(non16);
-                                board[y, x] = non16;
-                                break;
+                            int tomp = int.Parse(temp);
+                            x += tomp;
+                      
                         }
-
-                        x++;
-                        if (x == 8)
+                        catch
                         {
-                            if(y == 7)
+                            switch (temp)
                             {
-                                end = true;
+                                case "P":
+                                    Figure non1 = new Figure(FigureType.pawn, Side.white, y, x, "White_pawn_" + u, main);
+                                    Figurelist.Add(non1);
+                                    board[y, x] = non1;
+                                    break;
+
+                                case "R":
+                                    Figure non2 = new Figure(FigureType.tower, Side.white, y, x, "White_tower_" + u, main);
+                                    Figurelist.Add(non2);
+                                    board[y, x] = non2;
+                                    break;
+
+                                case "B":
+                                    Figure non3 = new Figure(FigureType.bishop, Side.white, y, x, "White_tower_" + u, main);
+                                    Figurelist.Add(non3);
+                                    board[y, x] = non3;
+                                    break;
+
+                                case "Q":
+                                    Figure non4 = new Figure(FigureType.queen, Side.white, y, x, "White_queen_" + u, main);
+                                    Figurelist.Add(non4);
+                                    board[y, x] = non4;
+                                    break;
+
+                                case "K":
+                                    Figure non5 = new Figure(FigureType.king, Side.white, y, x, "White_king_" + u, main);
+                                    Figurelist.Add(non5);
+                                    board[y, x] = non5;
+                                    break;
+
+                                case "N":
+                                    Figure non6 = new Figure(FigureType.knight, Side.white, y, x, "White_horse_" + u, main);
+                                    Figurelist.Add(non6);
+                                    board[y, x] = non6;
+                                    break;
+
+
+                                case "p":
+                                    Figure non11 = new Figure(FigureType.pawn, Side.black, y, x, "Black_pawn_" + u, main);
+                                    Figurelist.Add(non11);
+                                    board[y, x] = non11;
+                                    break;
+
+                                case "r":
+                                    Figure non12 = new Figure(FigureType.tower, Side.black, y, x, "Black_tower_" + u, main);
+                                    Figurelist.Add(non12);
+                                    board[y, x] = non12;
+                                    break;
+
+                                case "b":
+                                    Figure non13 = new Figure(FigureType.bishop, Side.black, y, x, "Black_bishop_" + u, main);
+                                    Figurelist.Add(non13);
+                                    board[y, x] = non13;
+                                    break;
+
+                                case "q":
+                                    Figure non14 = new Figure(FigureType.queen, Side.black, y, x, "Black_queen_" + u, main);
+                                    Figurelist.Add(non14);
+                                    board[y, x] = non14;
+                                    break;
+
+                                case "k":
+                                    Figure non15 = new Figure(FigureType.king, Side.black, y, x, "Black_king_" + u, main);
+                                    Figurelist.Add(non15);
+                                    board[y, x] = non15;
+                                    break;
+
+                                case "n":
+                                    Figure non16 = new Figure(FigureType.knight, Side.black, y, x, "Black_knight_" + u, main);
+                                    Figurelist.Add(non16);
+                                    board[y, x] = non16;
+                                    break;
                             }
-                            x = 0;
-                            y++;
+                            x++;
                         }
+                        
                     }
                 }
             }
+
+            paint();
         }
 
         public void turnchange()
