@@ -116,5 +116,21 @@ namespace Bitchess
         {
             server = "_6";
         }
+
+        private void fen_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if(fen.Text == "Fen...")
+            {
+                fen.Text = "";
+            }
+        }
+
+        private void fen_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if(fen.Text == "")
+            {
+                fen.Text = "Fen...";
+            }
+        }
     }
 }
