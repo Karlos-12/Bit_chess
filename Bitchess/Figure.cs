@@ -17,6 +17,7 @@ namespace Bitchess
         public FigureType Type { get; set; }
         public Side side { get; set; }
         private MainWindow main;
+        System.Media.SoundPlayer soundPlayer;
 
         public Figure(FigureType type, Side side, int y, int x, string name, MainWindow main)
         {
@@ -26,6 +27,9 @@ namespace Bitchess
             this.Name = name;
             this.side = side;
             this.main = main;
+
+             soundPlayer = new System.Media.SoundPlayer();
+
 
             image.MouseDown += new System.Windows.Input.MouseButtonEventHandler(piece_click);
             swithcero();
@@ -92,6 +96,8 @@ namespace Bitchess
 
         public void piece_click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            soundPlayer.SoundLocation = @"Sounds\figure select.wav";
+            soundPlayer.Play();
             main.repaint();
             Border highlith = new Border()
             {
@@ -1768,6 +1774,8 @@ namespace Bitchess
 
         public void move(object sneder, System.Windows.Input.MouseButtonEventArgs e)
         {
+            soundPlayer.SoundLocation = @"Sounds\moves.wav";
+            soundPlayer.Play();
             Border nol = (Border)sneder;
             if ((((int[])nol.Tag)[0] < 8 && ((int[])nol.Tag)[0] > -1) && (((int[])nol.Tag)[1] < 8 && ((int[])nol.Tag)[1] > -1))
             {
@@ -1801,6 +1809,8 @@ namespace Bitchess
 
         public void take(object sneder, System.Windows.Input.MouseButtonEventArgs e)
         {
+            soundPlayer.SoundLocation = @"Sounds\take.wav";
+            soundPlayer.Play();
             int bae = ((Controler)main.contr).Figurelist.IndexOf(this);
 
             Border nol = (Border)sneder;
