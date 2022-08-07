@@ -30,7 +30,6 @@ namespace Bitchess
 
              soundPlayer = new System.Media.SoundPlayer();
 
-
             image.MouseDown += new System.Windows.Input.MouseButtonEventHandler(piece_click);
             swithcero();
         }
