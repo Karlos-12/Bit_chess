@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Bitchess"
         mc:Ignorable="d"
         Title="Newgame" Height="450" Width="800" Foreground="{x:Null}"
-    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -297,7 +297,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Button Content="Offline" Margin="23,35,22,72" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Content="Offline" Margin="23,23,22,63" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click"/>
         <Button Content="Online" Margin="242,24,22,46" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="64" FontFamily="Consolas" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click1" Grid.Row="1"/>
         <RadioButton x:Name="r1" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="20" FontWeight="Bold" FontFamily="Consolas" Content="White" IsChecked="True" Margin="127,213,565,0" Checked="r1_Checked" Grid.RowSpan="2" Height="30" VerticalAlignment="Top"/>
         <RadioButton x:Name="r2" Background="{x:Null}" BorderBrush="#FF023E00" Foreground="#FF023E00" FontSize="20" FontWeight="Bold" FontFamily="Consolas" Content="Black" Margin="129,31,563,0" Checked="r2_Checked" Grid.Row="1" Height="27" VerticalAlignment="Top"/>
