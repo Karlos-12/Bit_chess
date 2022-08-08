@@ -38,6 +38,9 @@ namespace Bitchess
 #pragma warning restore CS8618 // Pole, které nemůže být null, musí při ukončování konstruktoru obsahovat hodnotu, která není null. Zvažte možnost deklarovat ho jako pole s možnou hodnotou null.
         {
             InitializeComponent();
+            var soundPlayer = new System.Media.SoundPlayer();
+            soundPlayer.SoundLocation = @"Sounds\POL-cyber-factory-short.wav";
+            soundPlayer.PlayLooping();
             maincotr = new Controler(this);
             contr = maincotr;
             ommm = onlineman;
