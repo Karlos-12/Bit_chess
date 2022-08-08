@@ -25,6 +25,9 @@ namespace Bitchess
         {
             InitializeComponent();
             this.f = f as Figure;
+            var soundPlayer = new System.Media.SoundPlayer();
+            soundPlayer.SoundLocation = @"Sounds\evolve.wav";
+            soundPlayer.Play();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)

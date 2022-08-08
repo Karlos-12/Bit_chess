@@ -1827,7 +1827,7 @@ namespace Bitchess
                 ((Controler)main.contr).ende((((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]]));
             }
 
-            if ((Type == FigureType.pawn && (y == 0 || y == 7)) && ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]].Type != FigureType.king)
+            if ((Type == FigureType.pawn && (((int[])nol.Tag)[0] == 0 || ((int[])nol.Tag)[0] == 7)) && ((Controler)main.contr).board[((int[])nol.Tag)[0], ((int[])nol.Tag)[1]].Type != FigureType.king)
             {
                 Pawnchooser chooser = new Pawnchooser(this);
                 chooser.Show();

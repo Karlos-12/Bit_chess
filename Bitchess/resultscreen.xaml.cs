@@ -22,14 +22,18 @@ namespace Bitchess
         public resultscreen(Side s)
         {
             InitializeComponent();
+            var soundPlayer = new System.Media.SoundPlayer();
+            soundPlayer.SoundLocation = @"Sounds\win.wav";
 
-            if(s == Side.black)
+            if (s == Side.black)
             {
                 splash.Content = "White have won!";
+                soundPlayer.Play();
             }
             else
             {
                 splash.Content = "Black have won!";
+                soundPlayer.Play();
             }
         }
 
